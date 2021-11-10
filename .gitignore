@@ -1,2 +1,5 @@
 **/*.dat
 **/*.ipynb_checkpoints
+**/*.pdf
+**/*.png
+**/*.pyc
