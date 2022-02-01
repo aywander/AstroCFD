@@ -121,7 +121,7 @@ def riemann_exact(ql, qr, grid, time):
         guess = np.array([1.])
 
         res = sco.newton(xi_equation, guess, args=(rho_l, rho_r))
-        print(f'Root found: xi = {res}')
+        print(f'Root found for time {time}: chi = {res}')
 
         u = sol_u(res, grid, time, u_l, u_r)
         rho = sol_rho(res, grid, u, time, rho_l, rho_r)
