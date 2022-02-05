@@ -16,17 +16,12 @@ def f_rarefaction(x, rho, prs, gamma):
     return (2. * a) / (gamma - 1.) * ((x / prs) ** ((gamma - 1.) / (2. * gamma)) - 1.)
 
 
-# def p_equation(x, rho_l, rho_r, u_l, u_r, prs_l, prs_r, gamma):
 def p_equation(x, q_l, q_r, gamma):
     """
     The implicit equation for the pressure shock Mach number of the adiabatic Riemann problem.
     :param x: pressure p
-    :param rho_l: distant left density
-    :param rho_r: distant right density
-    :param u_l: distant left velocity
-    :param u_r: distant right velocity
-    :param prs_l: distant left pressure
-    :param prs_r: distant right pressure
+    :param q_l: distant left state
+    :param q_r: distant right state
     :param gamma: adiabatic index
     :return:
     """
@@ -51,11 +46,8 @@ def mass_flux(q, q_star):
 def shock_speed(q, q_star):
     """
     Returns the shock speed given the upstream density, speed and pressure and star values
-    :param rho:
-    :param u:
-    :param prs:
-    :param u_star:
-    :param prs_star:
+    :param q: Upstream state
+    :param q_star: Downstream state
     :return:
     """
 
@@ -66,12 +58,9 @@ def shock_speed(q, q_star):
 
 def rarefaction_speeds(q, q_star, gamma, char_dir):
     """
-    :param rho: Left or right density
-    :param u: Left or right velocity
-    :param prs: Left or right pressure
-    :param rho_star: Left or right density in star region
-    :param u_star: Speed in star region
-    :param prs_star: Pressure in star region
+    :param q: Upstream state
+    :param q_star: Downstream state
+    :param gamma: Adiabatic index
     :param char_dir: -1 or 1 depending on whether the characteristics (rarefaction head and tail) are left or
     right-travelling
     :return:
