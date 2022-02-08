@@ -254,7 +254,7 @@ def riemann_exact(q_l, q_r, gamma, grid, time):
 
         print(f'Root found:')
         print(f'p* = {prs_star}, u* = {u_star}')
-        print(f'rho_*l = {rho_star_l}, rho_r = {rho_star_r}')
+        print(f'rho_*l = {rho_star_l}, rho_*r = {rho_star_r}')
         shock_str, rare_str= 'shock', 'rarefaction'
         print(f'Left wave is a {shock_str if wave_type_l == 0 else rare_str}.')
         print(f'Right wave is a {shock_str if wave_type_r == 0 else rare_str}.')
